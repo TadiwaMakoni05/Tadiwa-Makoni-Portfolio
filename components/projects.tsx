@@ -54,7 +54,7 @@ export function Projects() {
       type: "Backend Architecture",
       thumbnail: "/l1.png",
       tags: ["Python", "Django", "SQL"],
-      link: "#",
+      link: "https://github.com/TadiwaMakoni05/",
     },
     {
       title: "Portfolio Template",
@@ -66,7 +66,7 @@ export function Projects() {
       thumbnail: "/l1.png",
       tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
       link: "#",
-      repo: "https://github.com",
+      repo: "https://github.com/TadiwaMakoni05/",
     },
   ];
 

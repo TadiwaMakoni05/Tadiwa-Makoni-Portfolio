@@ -42,7 +42,7 @@ export function Hero() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.4} className="pt-4 flex items-center gap-4">
+        {/* <FadeIn delay={0.4} className="pt-4 flex items-center gap-4">
           <a
             href="#projects"
             className="inline-flex items-center justify-center rounded-md bg-foreground text-background px-6 py-3 text-sm font-medium transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
@@ -55,7 +55,7 @@ export function Hero() {
           >
             Contact Me
           </a>
-        </FadeIn>
+        </FadeIn> */}
       </div>
 
       <FadeIn

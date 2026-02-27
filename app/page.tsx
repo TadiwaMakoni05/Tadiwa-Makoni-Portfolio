@@ -20,7 +20,7 @@ export default function Home() {
       </main>
       <footer className="py-6 text-center text-sm text-muted-foreground border-t border-border/50">
         <p>
-          © {new Date().getFullYear()} Tadiwa Makoni. All rights reserved.
+          © {new Date().getFullYear()} T.Makoni. All rights reserved.
         </p>
       </footer>
     </>

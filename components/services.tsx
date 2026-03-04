@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
-import { Monitor, Server, Smartphone, Layout, Cpu } from "lucide-react";
+import { Monitor, Server, Smartphone, Layout, Cpu, Bot } from "lucide-react";
 
 export function Services() {
   const services = [
@@ -35,31 +35,42 @@ export function Services() {
         "End-to-end full-stack development, database architecture (SQL, PostgreSQL, SQLite), and scalable design.",
       icon: <Cpu className="h-6 w-6" />,
     },
+    {
+      title: "AI Engineering",
+      description:
+        "Integrating machine learning models, creating intelligent agents, and building AI-driven features for modern applications.",
+      icon: <Bot className="h-6 w-6" />,
+    },
   ];
 
   return (
-    <section id="services" className="py-24 md:py-32">
-      <FadeIn className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-          Services
-        </h2>
-        <div className="h-1 w-12 bg-foreground rounded mt-6"></div>
-      </FadeIn>
+    <section
+      id="services"
+      className="py-24 md:py-32 bg-foreground text-background"
+    >
+      <div className="container mx-auto px-6 max-w-5xl">
+        <FadeIn className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Services
+          </h2>
+          <div className="h-1 w-12 bg-background rounded mt-6"></div>
+        </FadeIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <FadeIn key={service.title} delay={0.1 * index}>
-            <div className="group h-full rounded-2xl border border-border bg-card p-6 transition-all hover:bg-accent/50 hover:shadow-md">
-              <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-background p-3 shadow-sm border border-border group-hover:scale-110 transition-transform">
-                {service.icon}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <FadeIn key={service.title} delay={0.1 * index}>
+              <div className="group h-full rounded-2xl border border-background/20 bg-background/5 p-6 transition-all hover:bg-background/10 hover:shadow-md">
+                <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-background text-foreground p-3 shadow-sm group-hover:scale-110 transition-transform">
+                  {service.icon}
+                </div>
+                <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
+                <p className="text-background/70 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          </FadeIn>
-        ))}
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );

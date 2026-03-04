@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-6 max-w-5xl overflow-hidden pb-10">
+      <main className="w-full">
         <Hero />
         <About />
         <Services />
@@ -18,10 +18,8 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
-      <footer className="py-6 text-center text-sm text-muted-foreground border-t border-border/50">
-        <p>
-          © {new Date().getFullYear()} T.Makoni. All rights reserved.
-        </p>
+      <footer className="py-6 text-center text-sm bg-foreground text-background">
+        <p>© {new Date().getFullYear()} T.Makoni. All rights reserved.</p>
       </footer>
     </>
   );

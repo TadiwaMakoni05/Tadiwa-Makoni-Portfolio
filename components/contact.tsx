@@ -44,37 +44,39 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 border-t border-border/50 text-center flex flex-col items-center"
+      className="py-24 md:py-32 border-t border-border/50 text-center flex flex-col items-center bg-foreground text-background"
     >
-      <FadeIn>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-          Let&apos;s Connect
-        </h2>
-        <p className="text-muted-foreground max-w-md mx-auto mb-10">
-          I&apos;m always open to discussing new projects, creative ideas, or
-          opportunities to be a part of your visions.
-        </p>
+      <div className="container mx-auto px-6 max-w-5xl">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Let&apos;s Connect
+          </h2>
+          <p className="text-muted-foreground max-w-md mx-auto mb-10">
+            I&apos;m always open to discussing new projects, creative ideas, or
+            opportunities to be a part of your visions.
+          </p>
 
-        <div className="flex justify-center gap-6">
-          {socials.map((social, index) => (
-            <a
-              key={social.name}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-2"
-              aria-label={`Contact via ${social.name}`}
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background shadow-sm transition-all group-hover:scale-110 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background text-muted-foreground">
-                {social.icon}
-              </div>
-              <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-                {social.name}
-              </span>
-            </a>
-          ))}
-        </div>
-      </FadeIn>
+          <div className="flex justify-center gap-6">
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center gap-2"
+                aria-label={`Contact via ${social.name}`}
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-background/20 bg-background shadow-sm transition-all group-hover:scale-110 group-hover:border-background group-hover:bg-background text-foreground">
+                  {social.icon}
+                </div>
+                <span className="text-xs font-medium text-background/80 group-hover:text-background transition-colors">
+                  {social.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 }

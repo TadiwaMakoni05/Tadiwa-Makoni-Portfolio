@@ -89,43 +89,48 @@ export function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projects" className="py-24 md:py-32">
-      <FadeIn className="mb-12 flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Projects
-          </h2>
-          <div className="h-1 w-12 bg-foreground rounded mt-6"></div>
-        </div>
-      </FadeIn>
+    <section
+      id="projects"
+      className="py-24 md:py-32 bg-background text-foreground"
+    >
+      <div className="container mx-auto px-6 max-w-5xl">
+        <FadeIn className="mb-12 flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Projects
+            </h2>
+            <div className="h-1 w-12 bg-foreground rounded mt-6"></div>
+          </div>
+        </FadeIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
-          <FadeIn key={project.title} delay={0.1 * index} className="h-full">
-            <button
-              onClick={() => setSelectedProject(project)}
-              className="text-left w-full h-full group block rounded-2xl border border-border bg-card p-6 transition-all hover:bg-accent/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center rounded-md bg-secondary/50 px-2 py-1 text-xs font-medium text-secondary-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </button>
-          </FadeIn>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <FadeIn key={project.title} delay={0.1 * index} className="h-full">
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="text-left w-full h-full group block rounded-2xl border border-border bg-card p-6 transition-all hover:bg-accent/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                </div>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center rounded-md bg-secondary/50 px-2 py-1 text-xs font-medium text-secondary-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </button>
+            </FadeIn>
+          ))}
+        </div>
       </div>
 
       <AnimatePresence>

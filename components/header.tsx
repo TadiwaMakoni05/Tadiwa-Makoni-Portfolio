@@ -48,19 +48,33 @@ export function Header() {
         <a
           href="#home"
           onClick={(e) => scrollToSection(e, "#home")}
-          className="text-lg font-bold tracking-tighter"
+          className={`text-lg font-bold tracking-tighter transition-colors ${
+            isScrolled || isMobileMenuOpen
+              ? "text-foreground"
+              : "text-background"
+          }`}
         >
           T.Makoni
         </a>
 
         <div className="flex items-center gap-4 md:gap-6">
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+          <nav
+            className={`hidden md:flex items-center gap-6 text-sm font-medium transition-colors ${
+              isScrolled || isMobileMenuOpen
+                ? "text-muted-foreground"
+                : "text-background/70"
+            }`}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="hover:text-foreground transition-colors"
+                className={`transition-colors ${
+                  isScrolled || isMobileMenuOpen
+                    ? "hover:text-foreground"
+                    : "hover:text-background"
+                }`}
               >
                 {link.name}
               </a>
@@ -68,9 +82,21 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2 md:gap-4">
-            <ThemeToggle />
+            <div
+              className={`transition-colors ${
+                isScrolled || isMobileMenuOpen
+                  ? "text-foreground"
+                  : "text-background"
+              }`}
+            >
+              <ThemeToggle />
+            </div>
             <button
-              className="md:hidden p-2 text-foreground"
+              className={`md:hidden p-2 transition-colors ${
+                isScrolled || isMobileMenuOpen
+                  ? "text-foreground"
+                  : "text-background"
+              }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >

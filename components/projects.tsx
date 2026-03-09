@@ -24,49 +24,76 @@ export function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Interactive Dashboard",
+      title: "ART Adherence Companion System",
       description:
-        "A comprehensive analytics dashboard built with React, Next.js, and TailwindCSS.",
+        "A web application that helps patients manage and track their Antiretroviral Therapy (ART) medication.",
       extendedDescription:
-        "This interactive dashboard provides real-time analytics for software usage. Built entirely with Next.js App Router and server components. Features include multi-series charts, dynamic filtering, user role management, and PostgreSQL database integration to securely handle millions of records.",
+        "The ART Adherence Companion System is designed to support patients on ART by helping them stay consistent with their medication. The platform allows users to track daily doses, receive medication reminders, monitor adherence progress, and view simple analytics about their treatment journey. Built using Next.js, React, and TailwindCSS, the system focuses on improving medication adherence and supporting better health outcomes for patients.",
       type: "Web Application",
-      thumbnail: "/l1.png", // Use placeholder logic
-      tags: ["Next.js", "Tailwind", "PostgreSQL"],
+      thumbnail: "/art.png",
+      tags: ["React.js", "Tailwind", "Django","SQLite","Django REST Framework"],
       link: "#",
+      repo: "https://github.com/TadiwaMakoni05/ART",
     },
     {
-      title: "Mobile E-commerce",
+      title: "Wedding Website",
       description:
-        "Cross-platform mobile application with secure payment integration and real-time inventory.",
+        "A website for a wedding event.",
       extendedDescription:
-        "Designed for iOS and Android, this e-commerce solution uses React Native and NativeWind to deliver a native-feeling shopping experience. It connects to Firebase for real-time inventory tracking, user authentication, and push notifications.",
-      type: "Mobile App",
+        "A website for a wedding event. Built using Next.js, React, and TailwindCSS.",
+      type: "Website",
       thumbnail: "/l1.png",
-      tags: ["React Native", "Firebase", "NativeWind"],
+      tags: ["Next.js", "TailwindCSS"],
+      link: "https://wedding-nine-iota.vercel.app",
+      repo: "https://github.com/TadiwaMakoni05/wedding",
+    },
+        {
+      title: "NEWS App",
+      description:
+        "A news app that allows users to view the latest news from around the world.",
+      extendedDescription:
+        "A news app that allows users to view the latest news from around the world. Built using React.js, TailwindCSS, and the NEWS API.",
+      type: "Website",
+      thumbnail: "/l1.png",
+      tags: ["React.js", "TailwindCSS","NEWS API"],
       link: "#",
+      repo: "https://github.com/TadiwaMakoni05/News-App",
     },
     {
-      title: "API Gateway System",
+      title: "Tour Travel Agency Website",
       description:
-        "Scalable backend architecture to manage and route user requests securely and efficiently.",
+        "A website for a tour travel agency.",
       extendedDescription:
-        "A Python/Django-powered API gateway handling authentication, rate-limiting, and microservice proxying. Built to withstand high-volume traffic (10,000+ requests/sec) and integrates natively with caching layers and SQL databases.",
-      type: "Backend Architecture",
+        "A website for a tour travel agency. Built using Next.js, React, and TailwindCSS.",
+      type: "Website",
       thumbnail: "/l1.png",
-      tags: ["Python", "Django", "SQL"],
-      link: "https://github.com/TadiwaMakoni05/",
+      tags: ["HTML", "CSS", "JS"],
+      link: "#",
+      repo: "https://github.com/TadiwaMakoni05/Tour-Travel-Agency",
     },
     {
-      title: "Portfolio Template",
+      title: "Maverick Aluminium Portfolio website",
       description:
-        "Minimalist, Vercel-inspired portfolio template crafted for software developers.",
+        "A portfolio website for Maverick Aluminium.",
       extendedDescription:
-        "The exact portfolio you are viewing! Built with a clean aesthetic and hyper-focus on accessibility, SEO, and fast load times. Utilizes Framer Motion for scroll-reveals and Next.js for server-side generation.",
+        "A portfolio website for Maverick Aluminium. Built using Next.js, React, and TailwindCSS.",
       type: "Web Application",
       thumbnail: "/l1.png",
-      tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
+      tags: ["Next.js", "Tailwind CSS"],
+      link: "https://maverick-nu.vercel.app",
+      repo: "https://github.com/TadiwaMakoni05/maverick",
+    },
+        {
+      title: "Netflix Clone",
+      description:
+        "A Netflix clone that allows users to watch movies and TV shows.",
+      extendedDescription:
+        "A Netflix clone that allows users to watch movies and TV shows. Built using React, and TailwindCSS.",
+      type: "Web Application",
+      thumbnail: "/l1.png",
+      tags: ["React.js", "Tailwind CSS","tmdb API"],
       link: "#",
-      repo: "https://github.com/TadiwaMakoni05/",
+      repo: "https://github.com/TadiwaMakoni05/Netflix-clone",
     },
   ];
 
@@ -164,8 +191,8 @@ export function Projects() {
                 <Image
                   src={selectedProject.thumbnail}
                   alt={`${selectedProject.title} thumbnail`}
-                  width={200}
-                  height={200}
+                  width={500}
+                  height={500}
                   className="opacity-20 dark:invert object-contain transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute bottom-4 left-6 py-1 px-3 bg-background/80 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider border border-border">

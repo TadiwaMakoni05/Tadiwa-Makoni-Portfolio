@@ -4,23 +4,23 @@ import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { TechStack } from "@/components/tech-stack";
 import { Projects } from "@/components/projects";
-import { Contact } from "@/components/contact";
+import { EngineeringApproach } from "@/components/approach";
+import { Contact, Footer } from "@/components/contact";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
-      <main className="w-full">
+      <main className="w-full flex-1">
         <Hero />
         <About />
         <Services />
         <TechStack />
         <Projects />
+        <EngineeringApproach />
         <Contact />
       </main>
-      <footer className="py-6 text-center text-sm bg-foreground text-background">
-        <p>© {new Date().getFullYear()} T.Makoni. All rights reserved.</p>
-      </footer>
-    </>
+      <Footer />
+    </div>
   );
 }

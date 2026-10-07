@@ -1,7 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 import * as React from "react";
 
 function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -18,65 +18,208 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Contact() {
-  const socials = [
+  const email = "tadiwa.makoni13@gmail.com";
+
+  const contactChannels = [
     {
-      name: "Email",
-      icon: <Mail className="h-6 w-6" />,
-      href: "mailto:tadiwa.makoni13@gmail.com",
+      name: "Direct Email",
+      handle: email,
+      icon: <Mail className="h-5 w-5" />,
+      href: `mailto:${email}`,
     },
+
     {
       name: "GitHub",
-      icon: <Github className="h-6 w-6" />,
+      handle: "TadiwaMakoni05",
+      icon: <Github className="h-5 w-5" />,
       href: "https://github.com/TadiwaMakoni05",
     },
+
     {
       name: "LinkedIn",
-      icon: <Linkedin className="h-6 w-6" />,
+      handle: "Tadiwa Makoni",
+      icon: <Linkedin className="h-5 w-5" />,
       href: "https://www.linkedin.com/in/tadiwa-makoni-95006a2a4/",
+     
     },
+
     {
       name: "WhatsApp",
-      icon: <WhatsAppIcon className="h-6 w-6 p-0.5" />,
+      handle: "+263 77 267 5611",
+      icon: <WhatsAppIcon className="h-5 w-5" />,
       href: "https://wa.me/263772675611",
-    },
+    }
   ];
 
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 border-t border-border/50 text-center flex flex-col items-center bg-foreground text-background"
+      className="py-24 md:py-32 border-b border-border bg-subtle-grid relative"
     >
-      <div className="container mx-auto px-6 max-w-5xl">
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Let&apos;s Connect
-          </h2>
-          <p className="text-muted-foreground max-w-md mx-auto mb-10">
-            I&apos;m always open to discussing new projects, creative ideas, or
-            opportunities to be a part of your visions.
-          </p>
-
-          <div className="flex justify-center gap-6">
-            {socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-2"
-                aria-label={`Contact via ${social.name}`}
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-background/20 bg-background shadow-sm transition-all group-hover:scale-110 group-hover:border-background group-hover:bg-background text-foreground">
-                  {social.icon}
-                </div>
-                <span className="text-xs font-medium text-background/80 group-hover:text-background transition-colors">
-                  {social.name}
-                </span>
-              </a>
-            ))}
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        {/* Section Header */}
+        <FadeIn className="mb-14 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground mb-3">
+            <span className="text-foreground font-semibold">06</span>
+            <span>//</span>
+            <span>GET IN TOUCH</span>
           </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            Let&apos;s build something useful.
+          </h2>
+
+          <p className="text-base sm:text-lg text-muted-foreground mt-4 leading-relaxed">
+            I&apos;m open to discussing new projects, engineering roles, creative ideas,
+            and software collaboration. Whether you need a full-stack web application, an API architecture,
+            or a mobile product, let&apos;s talk.
+          </p>
         </FadeIn>
+
+
+
+        {/* Channels Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          {contactChannels.map((channel, idx) => (
+            <FadeIn key={channel.name} delay={0.06 * idx}>
+              <a
+                href={channel.href}
+                target={channel.name !== "Direct Email" ? "_blank" : undefined}
+                rel={channel.name !== "Direct Email" ? "noopener noreferrer" : undefined}
+                className="group h-full rounded-xl border border-border bg-card p-5 flex flex-col justify-between transition-all duration-200 hover:border-foreground/40 hover:shadow-sm"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="p-2 rounded-md border border-border bg-muted/50 text-foreground group-hover:scale-105 transition-transform">
+                      {channel.icon}
+                    </div>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-foreground mb-1">
+                    {channel.name}
+                  </h3>
+                  <p className="font-mono text-xs text-muted-foreground truncate mb-2">
+                    {channel.handle}
+                  </p>
+                </div>
+              </a>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+export function Footer() {
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Stack", href: "#tech" },
+    { name: "Projects", href: "#projects" },
+    { name: "Approach", href: "#approach" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <footer className="border-t border-border bg-background py-12 text-foreground font-mono text-xs">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-8 border-b border-border/60">
+          {/* Brand & Title */}
+          <div className="md:col-span-5 space-y-2">
+            <div className="flex items-center gap-2 font-sans font-bold text-sm tracking-tight">
+              <span className="font-mono text-xs px-1.5 py-0.5 rounded border border-border bg-muted">
+                TM
+              </span>
+              <span>T.Makoni</span>
+            </div>
+            <p className="text-muted-foreground font-sans text-xs max-w-sm leading-relaxed">
+              Software Developer &amp; Full-Stack Engineer. Building scalable web experiences,
+              mobile products, and robust backend systems.
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="md:col-span-4 space-y-2">
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              INDEX
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* External Social Profiles */}
+          <div className="md:col-span-3 space-y-2">
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              EXTERNAL
+            </div>
+            <div className="space-y-1.5 text-xs">
+              <div>
+                <a
+                  href="https://github.com/TadiwaMakoni05"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                >
+                  <span>GitHub</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/tadiwa-makoni-95006a2a4/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                >
+                  <span>LinkedIn</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </a>
+              </div>
+              <div>
+                <a
+                  href="mailto:tadiwa.makoni13@gmail.com"
+                  className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                >
+                  <span>Email</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted-foreground">
+          <div>
+            © {new Date().getFullYear()} T.Makoni. All rights reserved.
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="#home"
+              onClick={scrollToTop}
+              className="text-foreground hover:underline"
+            >
+              Back to top ↑
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

@@ -12,11 +12,9 @@
   --color-foreground: var(--foreground);
 
   --font-sans:
-    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono:
-    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+    var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -30,6 +28,9 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -37,13 +38,22 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #09090b;
+
+  --card: #ffffff;
+  --card-foreground: #09090b;
 
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
 
   --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --accent-foreground: #09090b;
+
+  --primary: #09090b;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
 
   --border: #e4e4e7;
   --input: #e4e4e7;
@@ -56,11 +66,20 @@
   --background: #000000;
   --foreground: #ededed;
 
-  --muted: #27272a;
+  --card: #09090b;
+  --card-foreground: #ededed;
+
+  --muted: #18181b;
   --muted-foreground: #a1a1aa;
 
-  --accent: #27272a;
+  --accent: #18181b;
   --accent-foreground: #fafafa;
+
+  --primary: #ededed;
+  --primary-foreground: #000000;
+
+  --secondary: #18181b;
+  --secondary-foreground: #fafafa;
 
   --border: #27272a;
   --input: #27272a;
@@ -71,7 +90,54 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased font-sans selection:bg-foreground selection:text-background;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Subtle architectural grid pattern without gradients */
+.bg-subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(120, 120, 120, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 120, 0.06) 1px, transparent 1px);
+}
+
+.dark .bg-subtle-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Fine structural dot pattern */
+.bg-subtle-dots {
+  background-image: radial-gradient(rgba(120, 120, 120, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-subtle-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* Monospace technical tag styling */
+.font-mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

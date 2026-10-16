@@ -131,7 +131,7 @@ export function Projects() {
     {
       id: "netflix-clone",
       number: "06",
-      title: "Streaming Platform (Netflix Clone)",
+      title: "Netflix Clone",
       category: "ENTERTAINMENT & MEDIA STREAMING",
       description:
         "A full-stack media streaming web application featuring dynamic movie catalogues, TMDB API trailer playback, user authentication, and responsive media rows.",
@@ -139,11 +139,11 @@ export function Projects() {
         "A full-stack media platform inspired by modern streaming interfaces. Built with Python and Django on the backend and Tailwind CSS on the frontend. Connects to the TMDB API for live poster feeds, synopsis data, genre classifications, and responsive video trailers with user session management.",
       type: "Full-Stack Web Application",
       thumbnail: "/netflix.jpg",
-      mockUrl: "stream-app.internal",
-      tags: ["Python", "Django", "Tailwind CSS", "TMDB API", "User Auth"],
-      repo: "https://github.com/TadiwaMakoni05/Netflix-clone",
+      mockUrl: "https://movie-clone-nine.vercel.app/",
+      tags: ["React", "Tailwind CSS", "TMDB API"],
+      repo: "https://github.com/TadiwaMakoni05/movie-clone",
       highlights: [
-        "Full-stack Django server architecture with user accounts",
+        "An independent, full-featured streaming discovery and entertainment editorial web application inspired by Netflix. ",
         "TMDB API video trailer fetching and movie categorization",
         "Horizontal scrolling media rows with hover expand states",
       ],

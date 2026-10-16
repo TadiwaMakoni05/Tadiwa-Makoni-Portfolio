@@ -140,6 +140,7 @@ export function Projects() {
       type: "Full-Stack Web Application",
       thumbnail: "/netflix.jpg",
       mockUrl: "https://movie-clone-nine.vercel.app/",
+      link: "https://movie-clone-nine.vercel.app/",
       tags: ["React", "Tailwind CSS", "TMDB API"],
       repo: "https://github.com/TadiwaMakoni05/movie-clone",
       highlights: [
